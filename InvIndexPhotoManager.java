@@ -4,12 +4,12 @@ package photoapp;
 public class InvIndexPhotoManager {
     private BST<LinkedList<Photo>> tagIndex;
 
-    // Constructor
+    //Constructor
     public InvIndexPhotoManager() {
         tagIndex = new BST<LinkedList<Photo>>();
     }
 
-    // Add a new photo to the index
+    //Add a new photo to the index
     public void addPhoto(Photo img) {
         LinkedList<String> tags = img.getTags();
 
@@ -22,11 +22,11 @@ public class InvIndexPhotoManager {
             addToIndex(tags.retrieve(), img); // last tag
         }
 
-        // Also index under a special "ALL" tag to support empty condition
+        //Also index under a special "ALL" tag to support empty condition
         addToIndex("ALL", img);
     }
 
-    // Helper to insert photo into the index for a given tag
+    //Helper to insert photo into the index for a given tag
     private void addToIndex(String tag, Photo img) {
         if (tagIndex.findkey(tag)) {
             LinkedList<Photo> list = tagIndex.retrieve();
@@ -39,7 +39,7 @@ public class InvIndexPhotoManager {
         }
     }
 
-    // Remove a photo by path from all tags
+    //Remove a photo by path from all tags
     public void deletePhoto(String path) {
         String allTags = tagIndex.inOrder();
         String[] tagList = allTags.split(" AND ");
@@ -70,7 +70,7 @@ public class InvIndexPhotoManager {
         }
     }
 
-    // Return the BST (inverted index)
+    //Return the BST (inverted index)
     public BST<LinkedList<Photo>> getPhotos() {
         return tagIndex;
     }
