@@ -4,7 +4,7 @@ public class Test {
         PhotoManager storage = new PhotoManager();
         InvIndexPhotoManager searchEngine = new InvIndexPhotoManager();
 
-        // Add custom images
+        //Add custom images
         Photo lion = new Photo("lion.jpg", createTags("creature, roar, jungle, power"));
         Photo falcon = new Photo("falcon.jpg", createTags("creature, falcon, sky, wings, jungle"));
         Photo bee = new Photo("blue-bee.jpg", createTags("insect, bee, flower, buzz, blue"));
@@ -17,12 +17,12 @@ public class Test {
         searchEngine.addPhoto(falcon);
         searchEngine.addPhoto(bee);
 
-        // Create albums with new names and conditions
+        //Create albums with new names and conditions
         Album album1 = new Album("Roaring Jungle", "roar", storage);
         Album album2 = new Album("Creatures in Jungle", "creature AND jungle", storage);
         Album album3 = new Album("All Collection", "", storage);
 
-        // Print results
+        //Print results
         showAlbum(album1);
         showAlbum(album2);
         showAlbum(album3);
@@ -30,7 +30,7 @@ public class Test {
         System.out.println("\nDeleting 'lion.jpg'...\n");
         storage.deletePhoto("lion.jpg");
 
-        // Reprint after deletion
+        //Reprint after deletion
         Album albumAfterDelete = new Album("Updated Collection", "", storage);
         showAlbum(albumAfterDelete);
     }
