@@ -1,4 +1,4 @@
-package photoapp;
+ package photoapp;
 
 public class Album {
     private String albumName;
@@ -12,7 +12,7 @@ public class Album {
         this.condition = cond;
         this.manager = pm;
         comparisons = 0;
-    }
+     }
 
     // Get album name
     public String getName() {
