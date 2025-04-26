@@ -1,4 +1,5 @@
 
+
 package photoapp;
 public class PhotoManager {
     private LinkedList<Photo> photoCollection;
@@ -6,7 +7,7 @@ public class PhotoManager {
     // Constructor
     public PhotoManager() {
         photoCollection = new LinkedList<Photo>();
-    }
+     }
 
     //Add a photo to the collection
     public void addPhoto(Photo img) {
