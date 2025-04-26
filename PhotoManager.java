@@ -8,14 +8,14 @@ public class PhotoManager {
         photoCollection = new LinkedList<Photo>();
     }
 
-    // Add a photo to the collection
+    //Add a photo to the collection
     public void addPhoto(Photo img) {
         if (!isAlreadyExists(img.getPath())) {
             photoCollection.insert(img);
         }
     }
 
-    // Remove a photo by path
+    //Remove a photo by path
     public void deletePhoto(String path) {
         if (photoCollection.empty()) return;
 
@@ -28,18 +28,18 @@ public class PhotoManager {
             photoCollection.findNext();
         }
 
-        // Check last item
+        //Check last item
         if (photoCollection.retrieve().getPath().equalsIgnoreCase(path)) {
             photoCollection.remove();
         }
     }
 
-    // Return all stored photos
+    //Return all stored photos
     public LinkedList<Photo> getPhotos() {
         return photoCollection;
     }
 
-    // Check if a photo already exists
+    //Check if a photo already exists
     private boolean isAlreadyExists(String path) {
         if (photoCollection.empty()) return false;
 
